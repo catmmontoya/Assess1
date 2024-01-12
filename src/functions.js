@@ -29,7 +29,7 @@ function approximatelyEqual(x, y) {
 //   fullName('John', 'Doe');
 //   => 'John Doe'
 function fullName(firstName, lastName) {
-  return firstName.toUpperCase() + lastName.toUpperCase();
+  return `${firstName.toUpperCase()} + ${lastName.toUpperCase()}`;
 }
 
 // Generate the sentence "PERSON was drinking BEVERAGE at LOCATION" using the
@@ -64,7 +64,14 @@ function censorVowels(string) {
 //   => 'hElLo wOrLd'
 function stickyCase(string) {
   let newString = "";
-  for (let i = 0; i < string.length; i += 2) {}
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      newString += string[i].toUpperCase();
+    } else {
+      newString += string[i].toLowerCase();
+    }
+  }
+  return newString;
 }
 
 // Return the given string in leetspeak. Leetspeak is a modified version of
@@ -79,7 +86,27 @@ function stickyCase(string) {
 // Ex.:
 //   leetspeak('javascript');
 //   => 'j4v45cr1p7'
-function leetspeak(string) {}
+function leetspeak(string) {
+  let leetspeak = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === "a") {
+      leetspeak += "4";
+    } else if (string[i] === "e") {
+      leetspeak += "3";
+    } else if (string[i] === "i") {
+      leetspeak += "1";
+    } else if (string[i] === "o") {
+      leetspeak += "0";
+    } else if (string[i] === "s") {
+      leetspeak += "5";
+    } else if (string[i] === "t") {
+      leetspeak += "7";
+    } else {
+      leetspeak += string[i];
+    }
+  }
+  return leetspeak;
+}
 
 export {
   approximatelyEqual,

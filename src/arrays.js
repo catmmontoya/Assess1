@@ -72,7 +72,12 @@ function everyOtherItem(items) {
 //   => [1, 4]
 function findWordsStartingWith(words, letter) {
   let indexes = [];
-  for (let i = 0; i < words.length; ) {}
+  for (let i = 0; i < words.length; i++) {
+    if (words[i][0] === letter) {
+      indexes.push(i);
+    }
+  }
+  return indexes;
 }
 
 // Return the `n` smallest values in the array in descending order (largest
@@ -83,6 +88,7 @@ function findWordsStartingWith(words, letter) {
 //   => [21, 4, 1]
 function smallestNItems(items, n) {
   items.sort((a, b) => b - a);
+  return items.slice(0, n);
 }
 
 // Search for a value in the array and return its index. If the value appears
@@ -91,7 +97,13 @@ function smallestNItems(items, n) {
 // Ex.:
 //   findIndex(['a', 'b', 'c', 'a', 'b', 'c'], 'c');
 //   => 2
-function findIndex(items, value) {}
+function findIndex(items, value) {
+  const index = items.indexOf(value);
+  if (index === -1) {
+    return undefined;
+  }
+  return index;
+}
 
 // Given a start number and stop number, return a new array containing all the numbers
 // between the start and stop number.
