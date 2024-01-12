@@ -11,7 +11,7 @@
     "test:all": "cross-env NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest",
     "further-study": "run-s -c test:all open-report",
     "start": "npm-run-all test:watch",
-    "test": "run-s -c test:core open-report"
+    "test": "sudo run-s -c test:core open-report"
   },
   "author": "",
   "license": "ISC",
