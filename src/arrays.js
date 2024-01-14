@@ -88,7 +88,7 @@ function findWordsStartingWith(words, letter) {
 //   => [21, 4, 1]
 function smallestNItems(items, n) {
   items.sort((a, b) => b - a);
-  return items.slice(0, n);
+  for (n = 0; n < items.length; n++) {}
 }
 
 // Search for a value in the array and return its index. If the value appears
