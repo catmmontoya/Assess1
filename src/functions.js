@@ -68,7 +68,7 @@ function stickyCase(string) {
     if (i % 2 === 0) {
       newString += string[i].toUpperCase();
     } else {
-      newString += string[i].toLowerCase();
+      newString += string[i];
     }
   }
   return newString;
